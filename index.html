@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JRXNRS Blog</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Background Video -->
+    <div class="video-background">
+        <video autoplay muted loop>
+            <source src="video/video4.mp4" type="video/mp4">
+            Ваш браузер не підтримує відео тег.
+        </video>
+    </div>
+
+    <!-- Overlay Content (Navigation + Title) -->
+    <div class="overlay">
+        <!-- Navigation bar -->
+        <nav>
+            <ul>
+                <li><a href="#home">Головна</a></li>
+                <li><a href="#news">Новини</a></li>
+                <li><a href="#contacts">Контакти</a></li>
+                <li><a href="#collaboration">Співпраця</a></li>
+                <li><a href="#about-me">Про мене</a></li>
+                <li><a href="#projects">Проекти</a></li>
+            </ul>
+        </nav>
+
+        <!-- Centered Title -->
+        <div class="center-title">
+            <h1>JRXNRS</h1>
+        </div>
+    </div>
+
+    <!-- Main Section -->
+    <section id="home" class="main-section">
+        <div class="container">
+            <div class="photo">
+                <img src="image/logo_main2.jpg" alt="Your Photo">
+            </div>
+            <div class="welcome-text">
+                <h2>Хей! Ти зайшов на мій сайт</h2>
+                <p>Приємно тебе бачити, тут буде з часом дуже багато цікавого, сподіваюсь тобі вже подобається!</p>
+                <p>
+                    Хочеш дізнатись мій Instagram або Telegram, клікай <a href="#contacts">сюди</a>.<br>
+                    Хочеш щось запропонувати, клікай <a href="#collaboration"> сюди</a>.<br>
+                    Хочеш дізнатись більше про мене, клікай <a href="#about">сюди</a>.<br>
+                    Хочеш дізнатись про проекти, клікай <a href="#projects">сюди</a>.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section id="news" class="main-section">
+        <div class="container">
+            <h2>Новини</h2>
+            <p>Наразі тут немає жодних новин. Слідкуйте за оновленнями!</p>
+        </div>
+
+    </section>
+    <section id="contacts" class="main-section">
+        <div class="container">
+            <h2>Контакти</h2>
+            <div class="contact-item">
+                <img src="image/icon_gmail.png" alt="Gmail Icon">
+                <a href="mailto:your-email1@gmail.com">your-email1@gmail.com</a>
+            </div>
+            <div class="contact-item">
+                <img src="image/icon_gmail.png" alt="Gmail Icon">
+                <a href="mailto:your-email2@gmail.com">your-email2@gmail.com</a>
+            </div>
+            <div class="contact-item">
+                <img src="image/icon_teleg.png" alt="Telegram Icon">
+                <a href="https://t.me/SushkoNa" target="_blank">@SushkoNa</a>
+            </div>
+            <div class="contact-item">
+                <img src="image/icon_teleg.png" alt="Telegram Icon">
+                <a href="https://t.me/jrxnrsl" target="_blank">@jrxnrsl</a>
+            </div>
+            <div class="contact-item">
+                <img src="image/icon_inst.png" alt="Instagram Icon">
+                <a href="https://instagram.com/anastasia__sushko" target="_blank">anastasia__sushko</a>
+            </div>
+            <div class="contact-item">
+                <img src="image/icon_inst.png" alt="Instagram Icon">
+                <a href="https://instagram.com/jrxnrs" target="_blank">@jrxnrs</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="collaboration" class="main-section">
+        <div class="container">
+            <h2>Співпраця</h2>
+            <p>Пропонуйте свої ідеї та пропозиції. Ми завжди відкриті до нових співпраць!</p>
+            <form id="collaboration-form">
+                <div class="form-group">
+                    <label for="name">Ім'я:</label>
+                    <input type="text" id="name" name="user_name" required>
+                </div>
+                <div class="form-group">
+                    <label for="contact">Контакти для зв'язку:</label>
+                    <input type="text" id="contact" name="user_contact" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Ваші пропозиції:</label>
+                    <textarea id="message" name="user_message" rows="5" required></textarea>
+                </div>
+                <button type="submit">Відправити</button>
+            </form>
+        </div>
+    </section>
+    
+    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js"></script>
+    <script type="text/javascript">
+       (function(){
+          emailjs.init("K4xLTieXlIG5cQwqz"); // Введіть ваш API Key з EmailJS
+       })();
+       
+       document.getElementById('collaboration-form').addEventListener('submit', function(event) {
+           event.preventDefault(); // Зупиняємо стандартну поведінку форми
+       
+           emailjs.sendForm('service_0tqyahw', 'template_czyish4', this)
+           .then(function() {
+               alert('Повідомлення успішно відправлено!');
+           }, function(error) {
+               alert('Сталася помилка, спробуйте ще раз.', error);
+           });
+       });
+    </script>
+
+<section id="about-me" class="main-section">
+    <div class="container">
+        <div class="about-content">
+            <div class="profile-images">
+                <div class="profile-image">
+                    <img src="image/photo1.jpg" alt="Tolya's Photo">
+                    <p>Толя</p>
+                </div>
+                <div class="profile-image">
+                    <img src="image/logo_love.jfif" alt="Nastya's Photo">
+                    <p>Настя</p>
+                </div>
+            </div>
+            <div class="about-text">
+                <h2>Про мене</h2>
+                <p>Вітаю! Я починаючий веб-розробник. Ви зараз перебуваєте на моєму сайті, де я ділюсь своїми проєктами та ідеями. Мене звати Толя, мені 19 років, і я навчаюсь у Національному авіаційному університеті на спеціальності кібербезпека (3 курс). Наразі активно вивчаю HTML, CSS, та JavaScript, щоб створювати цікаві та функціональні вебсайти.</p>
+                <p>Мій менеджер — моя дівчина Настя. Вона допомагає мені з організаційними питаннями. Якщо у вас є пропозиції або ідеї, можна зв’язатися безпосередньо зі мною або з Настею. Також ви можете надіслати пропозиції через розділ "Співпраця". Дякую, що завітали на сайт!</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+</body>
+</html>

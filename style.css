@@ -1,0 +1,429 @@
+/* Basic reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    height: 100%;
+    font-family: Arial, sans-serif;
+}
+
+
+.video-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: -1;
+}
+
+.video-background video {
+    min-width: 100%;
+    min-height: 100%;
+    object-fit: cover;
+}
+
+
+.overlay {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+    position: relative;
+    z-index: 1;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+
+nav {
+    margin-top: 20px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+}
+
+nav ul li {
+    display: inline;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 28px;
+}
+
+nav ul li a:hover {
+    color: #ff9900;
+}
+
+
+.center-title {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.center-title h1 {
+    font-size: 100px;
+    letter-spacing: 10px;
+}
+
+
+.main-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(to bottom right, #1a1a1a, #3d3d3d); 
+    color: white;
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+}
+
+
+.main-section::before,
+.main-section::after {
+    content: '';
+    position: absolute;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 0;
+}
+
+.main-section::before {
+    width: 600px;
+    height: 600px;
+    top: -100px;
+    right: -200px;
+}
+
+.main-section::after {
+    width: 300px;
+    height: 300px;
+    bottom: -150px;
+    left: -100px;
+}
+
+
+.container {
+    position: relative;
+    z-index: 1;
+}
+
+
+.photo img {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    border: 5px solid #ff9900; 
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    margin-bottom: 30px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.photo img:hover {
+    transform: scale(1.1); 
+}
+
+
+.welcome-text h2 {
+    font-size: 36px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    background: linear-gradient(90deg, #ff9900, #ff5500);
+    -webkit-background-clip: text;
+    color: transparent; 
+}
+
+.welcome-text p {
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+
+.welcome-text a {
+    color: #ff9900;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.welcome-text a:hover {
+    color: #ff5500;
+}
+
+
+.container {
+    opacity: 0;
+    transform: translateY(50px);
+    animation: fadeInUp 1.5s forwards;
+}
+
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+@media (max-width: 768px) {
+    .center-title h1 {
+        font-size: 60px;
+    }
+    
+    nav ul li a {
+        font-size: 20px;
+    }
+    
+    .photo img {
+        width: 120px;
+        height: 120px;
+    }
+    
+    .welcome-text h2 {
+        font-size: 28px;
+    }
+
+    .welcome-text p {
+        font-size: 16px;
+    }
+}
+html {
+    scroll-behavior: smooth;
+}
+#about-me .about-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 50px 0;
+}
+
+#about-me .profile-images {
+    display: flex;
+    gap: 40px; /* Відстань між зображеннями */
+}
+
+#about-me .profile-image {
+    text-align: center;
+}
+
+#about-me .profile-image img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 50%; /* Зробити фото круглим */
+    border: 4px solid #333; /* Окантовка навколо фото */
+}
+
+#about-me .about-text {
+    max-width: 600px;
+    margin-left: 40px;
+}
+
+#about-me h2 {
+    margin-bottom: 20px;
+    font-size: 32px;
+    color: #333;
+}
+
+#about-me p {
+    margin-bottom: 15px;
+    line-height: 1.6;
+    font-size: 18px;
+    color: #555;
+}
+/* Стилі для секції "Співпраця" */
+#collaboration .container h2 {
+    font-size: 36px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    background: linear-gradient(90deg, #ff9900, #ff5500);
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+#collaboration .container p {
+    font-size: 18px;
+    margin-bottom: 20px;
+    color: #fff;
+}
+
+/* Стилі для форми */
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    font-size: 18px;
+    display: block;
+    margin-bottom: 10px;
+    color: #ff9900;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: #ff9900;
+    outline: none;
+    box-shadow: 0 0 5px rgba(255, 153, 0, 0.5);
+}
+
+button[type="submit"] {
+    background-color: #ff9900;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+    transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover {
+    background-color: #ff5500;
+}
+
+/* Адаптація для мобільних пристроїв */
+@media (max-width: 768px) {
+    .form-group label {
+        font-size: 16px;
+    }
+
+    .form-group input,
+    .form-group textarea {
+        font-size: 14px;
+    }
+
+    button[type="submit"] {
+        font-size: 16px;
+    }
+}
+/* Стилі для секції "Контакти" */
+#contacts .container h2 {
+    font-size: 36px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    background: linear-gradient(90deg, #ff9900, #ff5500);
+    -webkit-background-clip: text;
+    color: transparent; /* Градієнтний текст */
+}
+
+/* Контактні елементи */
+.contact-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.contact-item img {
+    width: 40px;
+    height: 40px;
+    margin-right: 15px;
+    
+}
+
+.contact-item a {
+    color: #ff9900;
+    font-size: 18px;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.contact-item a:hover {
+    color: #ff5500;
+}
+
+/* Адаптація для мобільних пристроїв */
+@media (max-width: 768px) {
+    .contact-item img {
+        width: 30px;
+        height: 30px;
+    }
+
+    .contact-item a {
+        font-size: 16px;
+    }
+}
+/* Загальні стилі для сторінки */
+html {
+    scroll-behavior: smooth; /* Додає плавне прокручування */
+}
+
+#about-me .about-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 50px 0;
+}
+
+#about-me .profile-images {
+    display: flex;
+    gap: 40px; /* Відстань між зображеннями */
+}
+
+#about-me .profile-image {
+    text-align: center;
+    position: relative;
+}
+
+#about-me .profile-image img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 50%; /* Зробити фото круглим */
+    border: 6px solid orange; /* Оранжева рамка навколо фото */
+}
+
+#about-me .profile-image p {
+    margin-top: 10px;
+    font-size: 18px;
+    color: #333;
+}
+
+#about-me .about-text {
+    max-width: 600px;
+    margin-left: 40px;
+}
+
+#about-me h2 {
+    margin-bottom: 20px;
+    font-size: 32px;
+    color: #333;
+}
+
+#about-me p {
+    margin-bottom: 15px;
+    line-height: 1.6;
+    font-size: 18px;
+    color: #555;
+}
